@@ -4,18 +4,18 @@ import AppReducer from './AppReducer';
 
 
 
-// const initialState = {
-//     transactions: []
-//   }
-
 const initialState = {
-    AllTransactions: [
-  { id: 1, description: 'Flower', amount: -20 },
-  { id: 2, description: 'Salary', amount: 300 },
-  { id: 3, description: 'Book', amount: -10 },
-  { id: 4, description: 'Camera', amount: 150 }
-]
-}
+    AllTransactions: []
+  }
+
+// const initialState = {
+//     AllTransactions: [
+//   { id: 1, description: 'Flower', amount: -20 },
+//   { id: 2, description: 'Salary', amount: 300 },
+//   { id: 3, description: 'Book', amount: -10 },
+//   { id: 4, description: 'Camera', amount: 150 }
+// ]
+// }
 
 export const GlobalContext = createContext(initialState);
 
