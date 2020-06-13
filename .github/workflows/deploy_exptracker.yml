@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy expense tracker
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2-beta
+      with:
+        nove-version: 12 
+    - uses: Borales/actions-yarn@v2.1.0
+      with:
+        cmd: install
+    - run: yarn build
+    - run: npm install -g surge
+    - run: surge ./build expense_tracker_mywaqar.surge.sh --token ${{secrets.EXPTRA_TOCKEN}}
+    
