@@ -22,4 +22,5 @@ jobs:
     - run: yarn build
     - run: npm install -g surge
     - run: surge ./build expense_tracker_mywaqar.surge.sh --token ${{secrets.EXPTRA_TOCKEN}}
+  
     
