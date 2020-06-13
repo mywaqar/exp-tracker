@@ -7,6 +7,8 @@ name: Deploy expense tracker
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -15,12 +17,12 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2-beta
       with:
-        nove-version: 12 
+        node-version: 12 
     - uses: Borales/actions-yarn@v2.1.0
       with:
         cmd: install
     - run: yarn build
     - run: npm install -g surge
-    - run: surge ./build expense_tracker_mywaqar.surge.sh --token ${{secrets.EXPTRA_TOCKEN}}
+    - run: surge ./build expense_tracker_mywaqar.surge.sh --token ${{secrets.EXPTRA_TOKEN}}
   
     
